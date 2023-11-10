@@ -4,6 +4,8 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
 
     public Examen1P2_AyleenEscobar() {
         initComponents();
+        PP_Admin.setVisible(false);
+        jP_Main.setVisible(true);
     }
 
     /**
@@ -24,7 +26,7 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
         tf_Password = new java.awt.TextField();
         btn_entrarAdmin = new java.awt.Button();
         btn_entrarUser = new java.awt.Button();
-        PanelPestania2 = new javax.swing.JTabbedPane();
+        PP_Admin = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -125,7 +127,7 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                                 .addGroup(jP_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(tf_userAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tf_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(139, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jP_MainLayout.setVerticalGroup(
             jP_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,16 +145,16 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                     .addComponent(tf_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(btn_entrarAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addComponent(btn_entrarUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
 
-        getContentPane().add(jP_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, -1, 380));
+        getContentPane().add(jP_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 600, 430));
 
-        PanelPestania2.addChangeListener(new javax.swing.event.ChangeListener() {
+        PP_Admin.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                PanelPestania2StateChanged(evt);
+                PP_AdminStateChanged(evt);
             }
         });
 
@@ -345,14 +347,14 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(tf_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(PPestania, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton5)
                 .addContainerGap())
         );
 
-        PanelPestania2.addTab("Publicar Libro", jPanel2);
+        PP_Admin.addTab("Publicar Libro", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -394,10 +396,10 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                     .addComponent(cb_TipoLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        PanelPestania2.addTab("Listar Libro", jPanel3);
+        PP_Admin.addTab("Listar Libro", jPanel3);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -511,10 +513,10 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
                             .addComponent(ff_precio_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
-        PanelPestania2.addTab("Editar Libros", jPanel6);
+        PP_Admin.addTab("Editar Libros", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -522,45 +524,49 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 570, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 385, Short.MAX_VALUE)
         );
 
-        PanelPestania2.addTab("Eliminar Libro", jPanel7);
+        PP_Admin.addTab("Eliminar Libro", jPanel7);
 
-        getContentPane().add(PanelPestania2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 60, 40));
+        getContentPane().add(PP_Admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 570, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_entrarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarAdminActionPerformed
-        // TODO add your handling code here:
+        String Admin= tf_userAdmin.toString();
+        String Password= tf_Password.toString();
+        if (Admin=="lib123"&& Password=="321lib") {
+            PP_Admin.setVisible(true);
+            jP_Main.setVisible(false);
+        }
     }//GEN-LAST:event_btn_entrarAdminActionPerformed
 
-    private void tf_userAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_userAdminActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_userAdminActionPerformed
-
     private void btn_entrarAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_entrarAdminMouseClicked
-        
-        /*jP_Admin.setVisible(true);
-        jTP_Admin.setVisible(true);
-        jTP_PublicarLibro.setVisible(true);
-        jP_Main.setVisible(false);*/
+
+        String Admin= tf_userAdmin.toString();
+        String Password= tf_Password.toString();
+        if (Admin=="lib123"&& Password=="321lib") {
+            PP_Admin.setVisible(true);
+            jP_Main.setVisible(false);
+        }
     }//GEN-LAST:event_btn_entrarAdminMouseClicked
 
-    private void PanelPestania2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PanelPestania2StateChanged
+    private void PP_AdminStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PP_AdminStateChanged
         // TODO add your handling code here:
-        if (PanelPestania.getSelectedIndex()==2) {
+        Libros libros= new Libros();
+        /*if (PanelPestania.getSelectedIndex()==2) {
             ta_libros.setText("");
-           /* for (Celular t : celulares) {
-                ta_celulares.append(t+"\n");
+            /*for (Libros l :nombre) {
+                ta_libros.append(l+"\n");
             }*/
-        }
-    }//GEN-LAST:event_PanelPestania2StateChanged
+        //}
+    }//GEN-LAST:event_PP_AdminStateChanged
 
     private void ff_tituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ff_tituloActionPerformed
         // TODO add your handling code here:
@@ -673,6 +679,10 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ff_titulo_modificarActionPerformed
 
+    private void tf_userAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_userAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_userAdminActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -709,10 +719,10 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane PP_Admin;
     private javax.swing.JTabbedPane PPestania;
     private javax.swing.JTabbedPane PanelPestania;
     private javax.swing.JTabbedPane PanelPestania1;
-    private javax.swing.JTabbedPane PanelPestania2;
     private javax.swing.JLabel TextoHM;
     private javax.swing.JLabel TextoHM1;
     private java.awt.Button btn_entrarAdmin;
