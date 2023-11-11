@@ -2,13 +2,15 @@ package examen1p2_ayleenescobar;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
 
     public Examen1P2_AyleenEscobar() {
         initComponents();
-        PP_Admin.setVisible(false);
+        PP_Admin2.setVisible(false);
         jP_Main.setVisible(true);
+        PP_User.setVisible(false);
     }
 
     /**
@@ -29,22 +31,26 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
         tf_Password = new java.awt.TextField();
         btn_entrarAdmin = new java.awt.Button();
         btn_entrarUser = new java.awt.Button();
-        PP_Admin = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        PPestania = new javax.swing.JTabbedPane();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        tf_facultad = new javax.swing.JTextField();
-        tf_curso = new javax.swing.JTextField();
+        PP_Admin2 = new javax.swing.JTabbedPane();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        PPestania3 = new javax.swing.JTabbedPane();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        tf_facultad3 = new javax.swing.JTextField();
+        tf_curso3 = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         jL_tipoReferencia = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jCB_LibroReferencia = new javax.swing.JComboBox<>();
         jPanel10 = new javax.swing.JPanel();
+        jL_LibroFiccion = new javax.swing.JLabel();
+        jCB_LibroFiccion = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
+        jL_LibroFiccion1 = new javax.swing.JLabel();
+        jCB_LibroNoFiccion = new javax.swing.JComboBox<>();
         tf_precio = new javax.swing.JTextField();
         tf_autor = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
@@ -52,11 +58,10 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta_libros = new javax.swing.JTextArea();
-        cb_TipoLibro = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
+        jCB_LibroNoFiccion1 = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        cb_TiposLibro_modificar = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
         cb_libros_modificar1 = new javax.swing.JComboBox();
         jLabel10 = new javax.swing.JLabel();
@@ -68,14 +73,38 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         ta_librosm = new javax.swing.JTextArea();
         jBtn_Modificar = new javax.swing.JButton();
+        jCB_LibroNoFiccion2 = new javax.swing.JComboBox<>();
         jPanel7 = new javax.swing.JPanel();
-        cb_TiposLibro_modificar1 = new javax.swing.JComboBox();
         cb_libros_modificar2 = new javax.swing.JComboBox();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         ta_librosm1 = new javax.swing.JTextArea();
         jBtn_Eliminar = new javax.swing.JButton();
+        jCB_LibroNoFiccion3 = new javax.swing.JComboBox<>();
+        PP_User = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        ta_libros2 = new javax.swing.JTextArea();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        cb_libros_modificar3 = new javax.swing.JComboBox();
+        jLabel23 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ta_libros3 = new javax.swing.JTextArea();
+        jCB_LibroNoFiccion4 = new javax.swing.JComboBox<>();
+        jPanel15 = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        ta_libros4 = new javax.swing.JTextArea();
+        jLabel24 = new javax.swing.JLabel();
+        cb_libros_modificar4 = new javax.swing.JComboBox();
+        jLabel25 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        ta_libros5 = new javax.swing.JTextArea();
+        jLabel26 = new javax.swing.JLabel();
+        jCB_LibroNoFiccion5 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -114,6 +143,11 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
 
         btn_entrarUser.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_entrarUser.setLabel("Entrar como Usuario");
+        btn_entrarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_entrarUserActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jP_MainLayout = new javax.swing.GroupLayout(jP_Main);
         jP_Main.setLayout(jP_MainLayout);
@@ -163,89 +197,89 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                 .addGap(31, 31, 31))
         );
 
-        getContentPane().add(jP_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+        getContentPane().add(jP_Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 630, 450));
 
-        PP_Admin.addChangeListener(new javax.swing.event.ChangeListener() {
+        PP_Admin2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 PP_AdminStateChanged(evt);
             }
         });
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel19.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Título: ");
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel28.setText("Título: ");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Autor:");
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel29.setText("Autor:");
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Precio:");
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel30.setText("Precio:");
 
-        PPestania.setBackground(new java.awt.Color(204, 204, 204));
-        PPestania.setForeground(new java.awt.Color(0, 0, 0));
-        PPestania.setToolTipText("");
-        PPestania.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        PPestania.addChangeListener(new javax.swing.event.ChangeListener() {
+        PPestania3.setBackground(new java.awt.Color(204, 204, 204));
+        PPestania3.setForeground(new java.awt.Color(0, 0, 0));
+        PPestania3.setToolTipText("");
+        PPestania3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        PPestania3.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 PPestaniaStateChanged(evt);
             }
         });
 
-        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel18.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("Curso: ");
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel31.setText("Curso: ");
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Facultad:");
+        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel32.setText("Facultad:");
 
-        tf_facultad.setBackground(new java.awt.Color(204, 222, 241));
+        tf_facultad3.setBackground(new java.awt.Color(204, 222, 241));
 
-        tf_curso.setBackground(new java.awt.Color(204, 222, 241));
+        tf_curso3.setBackground(new java.awt.Color(204, 222, 241));
 
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tf_facultad, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                    .addComponent(tf_curso))
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tf_facultad3)
+                    .addComponent(tf_curso3, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(tf_curso, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(tf_curso3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(tf_facultad, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(tf_facultad3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        PPestania.addTab("Libro de texto", jPanel8);
+        PPestania3.addTab("Libro de texto", jPanel18);
 
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
 
         jL_tipoReferencia.setForeground(new java.awt.Color(0, 0, 0));
         jL_tipoReferencia.setText("Tipo:");
 
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diccionario", "Enciclopedia", "Manual", "Técnico", "Tesauro" }));
-        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jCB_LibroReferencia.setBackground(new java.awt.Color(255, 255, 255));
+        jCB_LibroReferencia.setForeground(new java.awt.Color(0, 0, 0));
+        jCB_LibroReferencia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diccionario", "Enciclopedia", "Manual", "Técnico", "Tesauro" }));
+        jCB_LibroReferencia.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jComboBox1MouseClicked(evt);
+                jCB_LibroReferenciaMouseClicked(evt);
             }
         });
 
@@ -257,8 +291,8 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addComponent(jL_tipoReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addComponent(jCB_LibroReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,41 +300,85 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jL_tipoReferencia)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCB_LibroReferencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
 
-        PPestania.addTab("Libro de referencia", jPanel9);
+        PPestania3.addTab("Libro de referencia", jPanel9);
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
+
+        jL_LibroFiccion.setForeground(new java.awt.Color(0, 0, 0));
+        jL_LibroFiccion.setText("Tipo:");
+
+        jCB_LibroFiccion.setBackground(new java.awt.Color(255, 255, 255));
+        jCB_LibroFiccion.setForeground(new java.awt.Color(0, 0, 0));
+        jCB_LibroFiccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Novela", "SciFi", "Misterio", "Aventura" }));
+        jCB_LibroFiccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCB_LibroFiccionMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 521, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jL_LibroFiccion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCB_LibroFiccion, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jL_LibroFiccion)
+                    .addComponent(jCB_LibroFiccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
-        PPestania.addTab("Libro de Ficción", jPanel10);
+        PPestania3.addTab("Libro de Ficción", jPanel10);
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        jL_LibroFiccion1.setForeground(new java.awt.Color(0, 0, 0));
+        jL_LibroFiccion1.setText("Tipo:");
+
+        jCB_LibroNoFiccion.setBackground(new java.awt.Color(255, 255, 255));
+        jCB_LibroNoFiccion.setForeground(new java.awt.Color(0, 0, 0));
+        jCB_LibroNoFiccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ensayo", "Biografía", "Autobiografía", "Revista", "Científica" }));
+        jCB_LibroNoFiccion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCB_LibroNoFiccionMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 521, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jL_LibroFiccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCB_LibroNoFiccion, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jL_LibroFiccion1)
+                    .addComponent(jCB_LibroNoFiccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
-        PPestania.addTab("Libro de No Ficción", jPanel5);
+        PPestania3.addTab("Libro de No Ficción", jPanel5);
 
         tf_precio.setBackground(new java.awt.Color(204, 222, 241));
 
@@ -320,54 +398,54 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
 
         tf_titulo.setBackground(new java.awt.Color(204, 222, 241));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
                 .addGap(75, 75, 75)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tf_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                     .addComponent(tf_autor)
                     .addComponent(tf_precio))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel19Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(PPestania, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 24, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(PPestania3, javax.swing.GroupLayout.PREFERRED_SIZE, 521, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton5)
-                .addGap(122, 122, 122))
+                .addGap(64, 64, 64))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel28)
                     .addComponent(tf_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
                     .addComponent(tf_autor, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
                     .addComponent(tf_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(PPestania, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PPestania3, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
                 .addGap(18, 18, 18))
         );
 
-        PP_Admin.addTab("Publicar Libro", jPanel2);
+        PP_Admin2.addTab("Publicar Libro", jPanel19);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -376,15 +454,22 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
         ta_libros.setRows(5);
         jScrollPane1.setViewportView(ta_libros);
 
-        cb_TipoLibro.setBackground(new java.awt.Color(204, 204, 204));
-        cb_TipoLibro.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cb_TipoLibroItemStateChanged(evt);
-            }
-        });
-
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Tipo:");
+
+        jCB_LibroNoFiccion1.setBackground(new java.awt.Color(255, 255, 255));
+        jCB_LibroNoFiccion1.setForeground(new java.awt.Color(0, 0, 0));
+        jCB_LibroNoFiccion1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Los libros de Texto", "Los libros de Referencias", "Tipos de Libro de Ficción", "Tipos de Libro de No Ficción" }));
+        jCB_LibroNoFiccion1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCB_LibroNoFiccion1MouseClicked(evt);
+            }
+        });
+        jCB_LibroNoFiccion1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_LibroNoFiccion1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -396,9 +481,9 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cb_TipoLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 146, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jCB_LibroNoFiccion1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,26 +491,18 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(cb_TipoLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCB_LibroNoFiccion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        PP_Admin.addTab("Listar Libro", jPanel3);
+        PP_Admin2.addTab("Listar Libro", jPanel3);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Tipo:");
-
-        cb_TiposLibro_modificar.setBackground(new java.awt.Color(204, 204, 204));
-        cb_TiposLibro_modificar.setForeground(new java.awt.Color(255, 255, 255));
-        cb_TiposLibro_modificar.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cb_TiposLibro_modificarItemStateChanged(evt);
-            }
-        });
 
         jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Libro:");
@@ -480,6 +557,20 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
             }
         });
 
+        jCB_LibroNoFiccion2.setBackground(new java.awt.Color(255, 255, 255));
+        jCB_LibroNoFiccion2.setForeground(new java.awt.Color(0, 0, 0));
+        jCB_LibroNoFiccion2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Los libros de Texto", "Los libros de Referencias", "Tipos de Libro de Ficción", "Tipos de Libro de No Ficción" }));
+        jCB_LibroNoFiccion2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCB_LibroNoFiccion2MouseClicked(evt);
+            }
+        });
+        jCB_LibroNoFiccion2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_LibroNoFiccion2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -494,9 +585,10 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                                 .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                                 .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cb_TiposLibro_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cb_libros_modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(cb_libros_modificar1, 0, 152, Short.MAX_VALUE)
+                                .addComponent(jCB_LibroNoFiccion2, 0, 1, Short.MAX_VALUE))
+                            .addGap(64, 64, 64))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                             .addGap(33, 33, 33)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -510,7 +602,7 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                                 .addComponent(ff_autor_modificar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
                                 .addComponent(ff_titulo_modificar, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(ff_precio_modificar)))))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -518,7 +610,7 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cb_TiposLibro_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCB_LibroNoFiccion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -538,22 +630,14 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                             .addComponent(jLabel14)
                             .addComponent(ff_precio_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBtn_Modificar)
                 .addGap(28, 28, 28))
         );
 
-        PP_Admin.addTab("Editar Libros", jPanel6);
+        PP_Admin2.addTab("Editar Libros", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-
-        cb_TiposLibro_modificar1.setBackground(new java.awt.Color(204, 204, 204));
-        cb_TiposLibro_modificar1.setForeground(new java.awt.Color(255, 255, 255));
-        cb_TiposLibro_modificar1.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cb_TiposLibro_modificar1ItemStateChanged(evt);
-            }
-        });
 
         cb_libros_modificar2.setBackground(new java.awt.Color(204, 204, 204));
         cb_libros_modificar2.setForeground(new java.awt.Color(255, 255, 255));
@@ -586,29 +670,31 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
             }
         });
 
+        jCB_LibroNoFiccion3.setBackground(new java.awt.Color(255, 255, 255));
+        jCB_LibroNoFiccion3.setForeground(new java.awt.Color(0, 0, 0));
+        jCB_LibroNoFiccion3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Los libros de Texto", "Los libros de Referencias", "Tipos de Libro de Ficción", "Tipos de Libro de No Ficción" }));
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jBtn_Eliminar)
+                .addGap(24, 24, 24))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(162, 162, 162)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cb_libros_modificar2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cb_TiposLibro_modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(149, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jBtn_Eliminar)
-                        .addGap(24, 24, 24))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(147, 147, 147))))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cb_libros_modificar2, 0, 152, Short.MAX_VALUE)
+                            .addComponent(jCB_LibroNoFiccion3, 0, 0, Short.MAX_VALUE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -620,19 +706,233 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(cb_TiposLibro_modificar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(6, 6, 6)
+                        .addComponent(jCB_LibroNoFiccion3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(cb_libros_modificar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(4, 4, 4)
                 .addComponent(jBtn_Eliminar)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        PP_Admin.addTab("Eliminar Libro", jPanel7);
+        PP_Admin2.addTab("Eliminar Libro", jPanel7);
 
-        getContentPane().add(PP_Admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 570, 420));
+        getContentPane().add(PP_Admin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 620, 420));
+
+        PP_User.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                PP_UserStateChanged(evt);
+            }
+        });
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton6.setText("Comprar");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        ta_libros2.setBackground(new java.awt.Color(204, 204, 204));
+        ta_libros2.setColumns(20);
+        ta_libros2.setRows(5);
+        jScrollPane5.setViewportView(ta_libros2);
+
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("Tipo:");
+
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("Libro:");
+
+        cb_libros_modificar3.setBackground(new java.awt.Color(204, 204, 204));
+        cb_libros_modificar3.setForeground(new java.awt.Color(255, 255, 255));
+        cb_libros_modificar3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_libros_modificar3ItemStateChanged(evt);
+            }
+        });
+
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setText("Transacción");
+
+        ta_libros3.setBackground(new java.awt.Color(204, 204, 204));
+        ta_libros3.setColumns(20);
+        ta_libros3.setRows(5);
+        jScrollPane6.setViewportView(ta_libros3);
+
+        jCB_LibroNoFiccion4.setBackground(new java.awt.Color(255, 255, 255));
+        jCB_LibroNoFiccion4.setForeground(new java.awt.Color(0, 0, 0));
+        jCB_LibroNoFiccion4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Los libros de Texto", "Los libros de Referencias", "Tipos de Libro de Ficción", "Tipos de Libro de No Ficción" }));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(34, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cb_libros_modificar3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCB_LibroNoFiccion4, 0, 193, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(420, 420, 420)
+                .addComponent(jButton6)
+                .addGap(64, 64, 64))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCB_LibroNoFiccion4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_libros_modificar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44)
+                        .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(jButton6)
+                        .addGap(18, 18, 18))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        PP_User.addTab("Comprar Libro", jPanel4);
+
+        jPanel15.setBackground(new java.awt.Color(255, 255, 255));
+
+        jButton7.setText("Devolver");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        ta_libros4.setBackground(new java.awt.Color(204, 204, 204));
+        ta_libros4.setColumns(20);
+        ta_libros4.setRows(5);
+        jScrollPane7.setViewportView(ta_libros4);
+
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setText("Tipo:");
+
+        cb_libros_modificar4.setBackground(new java.awt.Color(204, 204, 204));
+        cb_libros_modificar4.setForeground(new java.awt.Color(255, 255, 255));
+        cb_libros_modificar4.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_libros_modificar4ItemStateChanged(evt);
+            }
+        });
+
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel25.setText("Libro:");
+
+        ta_libros5.setBackground(new java.awt.Color(204, 204, 204));
+        ta_libros5.setColumns(20);
+        ta_libros5.setRows(5);
+        jScrollPane8.setViewportView(ta_libros5);
+
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel26.setText("Transacción");
+
+        jCB_LibroNoFiccion5.setBackground(new java.awt.Color(255, 255, 255));
+        jCB_LibroNoFiccion5.setForeground(new java.awt.Color(0, 0, 0));
+        jCB_LibroNoFiccion5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Los libros de Texto", "Los libros de Referencias", "Tipos de Libro de Ficción", "Tipos de Libro de No Ficción" }));
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap(514, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(29, 29, 29))
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(344, 344, 344)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jCB_LibroNoFiccion5, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel15Layout.createSequentialGroup()
+                    .addGap(22, 22, 22)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 298, Short.MAX_VALUE)
+                    .addGap(27, 27, 27)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel15Layout.createSequentialGroup()
+                            .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cb_libros_modificar4, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(23, 23, 23))
+                        .addGroup(jPanel15Layout.createSequentialGroup()
+                            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(22, 22, 22)))))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCB_LibroNoFiccion5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 272, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(17, 17, 17))
+            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel15Layout.createSequentialGroup()
+                    .addGap(37, 37, 37)
+                    .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel15Layout.createSequentialGroup()
+                            .addGap(38, 38, 38)
+                            .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cb_libros_modificar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(44, 44, 44)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(37, Short.MAX_VALUE)))
+        );
+
+        PP_User.addTab("Devolver Libro", jPanel15);
+
+        getContentPane().add(PP_User, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 620, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -643,7 +943,7 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
         String Password = tf_Password.getText();
         
         if ("lib123".equals(Admin) && "321lib".equals(Password)) {
-            PP_Admin.setVisible(true);
+            PP_Admin2.setVisible(true);
             jP_Main.setVisible(false);
             JOptionPane.showMessageDialog(this, "Bienvenido");
         }else{
@@ -655,9 +955,79 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_entrarAdminMouseClicked
 
+    private void tf_userAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_userAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_userAdminActionPerformed
+
+    private void btn_entrarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarUserActionPerformed
+        // TODO add your handling code here:
+        PP_User.setVisible(true);
+        jP_Main.setVisible(false);
+        PP_Admin2.setVisible(false);
+    }//GEN-LAST:event_btn_entrarUserActionPerformed
+
     private void PP_AdminStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PP_AdminStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_PP_AdminStateChanged
+
+    private void jBtn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_EliminarActionPerformed
+        // TODO add your handling code here:
+        eliminarLibro();
+    }//GEN-LAST:event_jBtn_EliminarActionPerformed
+
+    private void jBtn_EliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtn_EliminarMouseClicked
+        // TODO add your handling code here:
+        if (cb_libros_modificar2.getSelectedIndex() >= 0) {
+            DefaultTableModel modelo
+                    = (DefaultTableModel) cb_libros_modificar2.getModel();
+            modelo.removeRow(cb_libros_modificar2.getSelectedIndex());
+            //cb_libros_modificar2.setModel(modelo);
+        }
+    }//GEN-LAST:event_jBtn_EliminarMouseClicked
+
+    private void cb_libros_modificar2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_libros_modificar2ItemStateChanged
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cb_libros_modificar2ItemStateChanged
+
+    private void jBtn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ModificarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jBtn_ModificarActionPerformed
+
+    private void jBtn_ModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtn_ModificarMouseClicked
+        // TODO add your handling code here:
+        try {
+            Libros.add( new Libros((tf_titulo.getText()), tf_autor.getText(),Integer.parseInt(tf_precio.getText()),1));
+            tf_titulo.setText("");
+            tf_autor.setText("");
+            tf_precio.setText("");
+            JOptionPane.showMessageDialog(this, "Libro modificado exitosamente");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error, libro no modificado.");
+        }
+    }//GEN-LAST:event_jBtn_ModificarMouseClicked
+
+    private void ff_titulo_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ff_titulo_modificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ff_titulo_modificarActionPerformed
+
+    private void cb_libros_modificar1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_libros_modificar1ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_libros_modificar1ItemStateChanged
+
+    private void jCB_LibroNoFiccion1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_LibroNoFiccion1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCB_LibroNoFiccion1ActionPerformed
+
+    private void jCB_LibroNoFiccion1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCB_LibroNoFiccion1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCB_LibroNoFiccion1MouseClicked
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
@@ -672,136 +1042,57 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5MouseClicked
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void PPestaniaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PPestaniaStateChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_PPestaniaStateChanged
 
-    private void cb_TipoLibroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_TipoLibroItemStateChanged
+    private void jCB_LibroNoFiccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCB_LibroNoFiccionMouseClicked
         // TODO add your handling code here:
-        //  if (flag == 1) {
-            /*if (evt.getStateChange() == 2) {
-                contactos s = (contactos)
-                cb_amigos.getSelectedItem();
-                Object[] newrow = {
-                    s.getCodigo(),
-                    s.getNombre(),
-                    ((new Date()).getTime()
-                        - s.getFecha_nacimiento().getTime())
-                    / (1000 * 60 * 60 * 24),/**
-                    * dias
-                    */
-                    /*s.getFecha_nacimiento()
-                };
-                DefaultTableModel modelo
-                = (DefaultTableModel) tabla1.getModel();
-                modelo.addRow(newrow);
-                tabla1.setModel(modelo);
-                //tf_edad_maxima.setText(maxima_edad());
-            }*/
-            //  }
-    }//GEN-LAST:event_cb_TipoLibroItemStateChanged
+    }//GEN-LAST:event_jCB_LibroNoFiccionMouseClicked
 
-    private void cb_TiposLibro_modificarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_TiposLibro_modificarItemStateChanged
+    private void jCB_LibroFiccionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCB_LibroFiccionMouseClicked
         // TODO add your handling code here:
-        /*if (flag == 2) {
-            if (evt.getStateChange() == 2) {
-                tf_codigo_m.setText("");
-                tf_nombre_m.setText("");
-                rb_m_m.setSelected(true);
-                rb_f_m.setSelected(false);
-                jd_fecha_m.setDate(new Date());
-                bt_color_m.setBackground(Color.red);
-                ta_direccion_m.setText("");
-                cb_idioma_m.setSelectedIndex(0);
-                cb_bailar_m.setSelected(false);
-                cb_correr_m.setSelected(false);
-                cb_tv_m.setSelected(false);
-                cb_football_m.setSelected(false);
-                cb_musica_m.setSelected(false);
+    }//GEN-LAST:event_jCB_LibroFiccionMouseClicked
 
-                seleccionado
-                = (contactos) cb_amigos_modificar.getSelectedItem();
-                this.tf_codigo_m.setText(
-                    Integer.toString(seleccionado.getCodigo()));
-                this.tf_nombre_m.setText(seleccionado.getNombre());
-                if (seleccionado.getSexo().equals("M")) {
-                    this.rb_m_m.setSelected(true);
-                    this.rb_f_m.setSelected(false);
-                } else {
-                    this.rb_f_m.setSelected(true);
-                    this.rb_m_m.setSelected(false);
-                }
-                this.jd_fecha_m.setDate(seleccionado.getFecha_nacimiento());
-                this.bt_color_m.setBackground(seleccionado.getColor());
-                this.ta_direccion_m.setText(seleccionado.getDireccion());
-                if (seleccionado.getIdioma().equalsIgnoreCase("Espanol")) {
-                    this.cb_idioma_m.setSelectedIndex(0);
-                } else {
-                    this.cb_idioma_m.setSelectedIndex(1);
-                }
-                if (seleccionado.getHobbie1().equals("football")) {
-                    cb_football_m.setSelected(true);
-                }
-                if (seleccionado.getHobbie2().equals("tv")) {
-                    cb_tv_m.setSelected(true);
-                }
-                if (seleccionado.getHobbie3().equals("musica")) {
-                    cb_musica_m.setSelected(true);
-                }
-                if (seleccionado.getHobbie4().equals("correr")) {
-                    cb_correr_m.setSelected(true);
-                }
-                if (seleccionado.getHobbie5().equals("bailar")) {
-                    cb_bailar_m.setSelected(true);
-                }
-
-            }
-        }*/
-    }//GEN-LAST:event_cb_TiposLibro_modificarItemStateChanged
-
-    private void cb_libros_modificar1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_libros_modificar1ItemStateChanged
+    private void jCB_LibroReferenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCB_LibroReferenciaMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_cb_libros_modificar1ItemStateChanged
+    }//GEN-LAST:event_jCB_LibroReferenciaMouseClicked
 
-    private void ff_titulo_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ff_titulo_modificarActionPerformed
+    private void PP_UserStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PP_UserStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_ff_titulo_modificarActionPerformed
+    }//GEN-LAST:event_PP_UserStateChanged
 
-    private void tf_userAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_userAdminActionPerformed
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_userAdminActionPerformed
+    }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void cb_TiposLibro_modificar1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_TiposLibro_modificar1ItemStateChanged
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_cb_TiposLibro_modificar1ItemStateChanged
+    }//GEN-LAST:event_jButton7MouseClicked
 
-    private void cb_libros_modificar2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_libros_modificar2ItemStateChanged
+    private void cb_libros_modificar3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_libros_modificar3ItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_cb_libros_modificar2ItemStateChanged
+    }//GEN-LAST:event_cb_libros_modificar3ItemStateChanged
 
-    private void jBtn_EliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtn_EliminarMouseClicked
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtn_EliminarMouseClicked
+    }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jBtn_EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_EliminarActionPerformed
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtn_EliminarActionPerformed
+    }//GEN-LAST:event_jButton6MouseClicked
 
-    private void jBtn_ModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtn_ModificarMouseClicked
+    private void cb_libros_modificar4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_libros_modificar4ItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtn_ModificarMouseClicked
+    }//GEN-LAST:event_cb_libros_modificar4ItemStateChanged
 
-    private void jBtn_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ModificarActionPerformed
+    private void jCB_LibroNoFiccion2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCB_LibroNoFiccion2MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtn_ModificarActionPerformed
+    }//GEN-LAST:event_jCB_LibroNoFiccion2MouseClicked
 
-    private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
+    private void jCB_LibroNoFiccion2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_LibroNoFiccion2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1MouseClicked
+    }//GEN-LAST:event_jCB_LibroNoFiccion2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -837,24 +1128,67 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
             }
         });
     }
-     ArrayList<Libros> Libros=new ArrayList();
+    
+    private void listarLibros() {
+        try {
+            ta_libros.setText("");
+            
+            for (Libros libro : Libros) {
+                String detallesLibro = String.format("Titulo: "+libro.getNombre()+"\nAutor: "+libro.getAutor()+"\nPrecio: "+libro.getPrecio()+"\nEdicion: "+libro.getEdicion()+"\n\n");
+
+                ta_libros.append(detallesLibro);
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    private void eliminarLibro() {
+    try {
+        int indiceSeleccionado = cb_libros_modificar2.getSelectedIndex();
+
+        if (indiceSeleccionado != -1) {
+            Libros.remove(indiceSeleccionado);
+            JOptionPane.showMessageDialog(this, "Libro eliminado exitosamente");
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona un libro para eliminar");
+        }
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(this, "Error al eliminar el libro");
+    }
+}
+    
+    ArrayList<Libros> Libros=new ArrayList();
+    double dinero=9999;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane PP_Admin;
-    private javax.swing.JTabbedPane PPestania;
+    private javax.swing.JTabbedPane PP_Admin2;
+    private javax.swing.JTabbedPane PP_User;
+    private javax.swing.JTabbedPane PPestania3;
     private java.awt.Button btn_entrarAdmin;
     private java.awt.Button btn_entrarUser;
-    private javax.swing.JComboBox cb_TipoLibro;
-    private javax.swing.JComboBox cb_TiposLibro_modificar;
-    private javax.swing.JComboBox cb_TiposLibro_modificar1;
     private javax.swing.JComboBox cb_libros_modificar1;
     private javax.swing.JComboBox cb_libros_modificar2;
+    private javax.swing.JComboBox cb_libros_modificar3;
+    private javax.swing.JComboBox cb_libros_modificar4;
     private javax.swing.JTextField ff_autor_modificar;
     private javax.swing.JTextField ff_precio_modificar;
     private javax.swing.JFormattedTextField ff_titulo_modificar;
     private javax.swing.JButton jBtn_Eliminar;
     private javax.swing.JButton jBtn_Modificar;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JComboBox<String> jCB_LibroFiccion;
+    private javax.swing.JComboBox<String> jCB_LibroNoFiccion;
+    private javax.swing.JComboBox<String> jCB_LibroNoFiccion1;
+    private javax.swing.JComboBox<String> jCB_LibroNoFiccion2;
+    private javax.swing.JComboBox<String> jCB_LibroNoFiccion3;
+    private javax.swing.JComboBox<String> jCB_LibroNoFiccion4;
+    private javax.swing.JComboBox<String> jCB_LibroNoFiccion5;
+    private javax.swing.JComboBox<String> jCB_LibroReferencia;
+    private javax.swing.JLabel jL_LibroFiccion;
+    private javax.swing.JLabel jL_LibroFiccion1;
     private javax.swing.JLabel jL_tipoReferencia;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -865,33 +1199,49 @@ public class Examen1P2_AyleenEscobar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jP_Main;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea ta_libros;
+    private javax.swing.JTextArea ta_libros2;
+    private javax.swing.JTextArea ta_libros3;
+    private javax.swing.JTextArea ta_libros4;
+    private javax.swing.JTextArea ta_libros5;
     private javax.swing.JTextArea ta_librosm;
     private javax.swing.JTextArea ta_librosm1;
     private java.awt.TextField tf_Password;
     private javax.swing.JTextField tf_autor;
-    private javax.swing.JTextField tf_curso;
-    private javax.swing.JTextField tf_facultad;
+    private javax.swing.JTextField tf_curso3;
+    private javax.swing.JTextField tf_facultad3;
     private javax.swing.JTextField tf_precio;
     private javax.swing.JTextField tf_titulo;
     private java.awt.TextField tf_userAdmin;

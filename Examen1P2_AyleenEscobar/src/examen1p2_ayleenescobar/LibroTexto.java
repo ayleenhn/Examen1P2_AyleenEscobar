@@ -8,7 +8,7 @@ public class LibroTexto extends Libros{
         super();
     }
 
-    public LibroTexto(String Curso, String facultad, String nombre, String autor, int precio, int edicion) {
+    public LibroTexto(String Curso, String facultad, String nombre, String autor, double precio, int edicion) {
         super(nombre, autor, precio, edicion);
         this.Curso = Curso;
         this.facultad = facultad;
